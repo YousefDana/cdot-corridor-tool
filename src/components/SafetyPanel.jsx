@@ -115,7 +115,7 @@ const SafetyPanel = ({ corridor, crashData }) => {
                 <div className="mt-auto pt-4 border-t border-slate-100 text-[10px] text-slate-400">
                     <div className="flex items-center gap-1.5">
                         <Info size={12} />
-                        <span>Source: IDOT Crash Data (2019-2023)</span>
+                        <span>Source: City of Chicago Traffic Crashes (2019-2023)</span>
                     </div>
                 </div>
 

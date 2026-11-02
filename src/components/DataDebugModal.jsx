@@ -178,7 +178,7 @@ const DataDebugModal = ({ isOpen, onClose, corridor, crashData, networkData, onN
                     <div className="border bg-white rounded shadow-sm flex flex-col flex-1 min-h-0">
                         <div className="px-4 py-2 border-b bg-slate-50 flex justify-between items-center sticky top-0 z-10">
                             <div className="flex items-center gap-2 font-bold text-slate-600">
-                                <Activity size={14} /> CRASH DATASET (IDOT 2018-2023)
+                                <Activity size={14} /> CRASH DATASET (CITY OF CHICAGO 2019-2023)
                             </div>
                             <div className="flex items-center gap-4">
                                 <div className="flex items-center gap-2 text-[10px]">

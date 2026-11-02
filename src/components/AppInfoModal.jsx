@@ -62,7 +62,7 @@ const AppInfoModal = ({ isOpen, onClose }) => {
                                     <ExternalLink size={10} className="ml-auto opacity-0 group-hover:opacity-100 text-slate-400 transition-opacity" />
                                 </div>
                                 <p className="source-desc">
-                                    Aggregated dataset of IDOT traffic crashes (2019–2023). Filtered for severity and mode.
+                                    City of Chicago Traffic Crashes dataset (2019–2023). Pedestrian and bicycle crashes within 100 ft of the corridor centerline.
                                 </p>
                                 <div className="tag-container">
                                     <span className="tag tag-amber">Pedestrian</span>

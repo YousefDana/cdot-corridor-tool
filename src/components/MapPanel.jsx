@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup, useMap, Polyline } from 'react-leaflet';
+import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import MapLegend from './MapLegend';
 
 // Component to handle map view updates when corridor changes
-function MapController({ center, zoom }) {
+// Fits the view to the corridor linework when available, otherwise uses center/zoom
+function MapController({ center, zoom, path }) {
     const map = useMap();
     useEffect(() => {
-        map.setView(center, zoom);
         map.invalidateSize();
-    }, [center, zoom, map]);
+        if (path && path.length) {
+            map.fitBounds(L.latLngBounds(path.flat()), { padding: [30, 30] });
+        } else {
+            map.setView(center, zoom);
+        }
+    }, [center, zoom, path, map]);
     return null;
 }
 
@@ -34,7 +40,7 @@ const MapPanel = ({ corridor, crashData }) => {
                         url={`https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${import.meta.env.VITE_CARTO_API_KEY}`}
                     />
 
-                    <MapController center={corridor.center} zoom={corridor.zoom} />
+                    <MapController center={corridor.center} zoom={corridor.zoom} path={corridor.path} />
 
                     {/* Corridor Geometry (Linework) */}
                     {corridor.path && (
